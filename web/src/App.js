@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Link } from "react-router-dom";
+import styled from 'styled-components';
+import Header from './components/Header.js';
+import Home from './views/Home.js';
+import Cards from "./views/Cards.js";
+import Decks from "./views/Decks.js";
+import Rules from "./views/Rules.js";
+import Account from "./views/Account.js";
 
-function App() {
+const AppBody = styled.div`
+  width: 80%;
+  margin: auto;
+`;
+
+let App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppBody>
+
+      <Header />
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path="/cards" element={ <Cards />} />
+        <Route path="/decks" element={ <Decks />} />
+        <Route path="/rules" element={ <Rules />} />
+        <Route path="/account" element={ <Account />} />
+      </Routes>
+
+    </AppBody>
   );
-}
+};
 
 export default App;
