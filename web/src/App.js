@@ -6,6 +6,7 @@ import Cards from "./views/Cards.js";
 import Decks from "./views/Decks.js";
 import Rules from "./views/Rules.js";
 import Account from "./views/Account.js";
+import Footer from "./components/Footer.js";
 
 const AppBody = styled.div`
   width: 80%;
@@ -25,6 +26,8 @@ let App = () => {
         <Route path="/rules" element={ <Rules />} />
         <Route path="/account" element={ <Account />} />
       </Routes>
+
+      <Footer />
 
     </AppBody>
   );
